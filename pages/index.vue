@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import axios from 'axios'
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const users = ref<Array<any>>([])
 // axios.get('/api/v1/users').then((res) => (users.value = res.data))
-const { data } = await axios.get('/api/v1/users')
+// const { data } = await axios.get('/api/v1/users')
+const data = 'aaa'
 console.log(data)
-
 const dateFormat = (date: string) => {
   const dateTimeFormat = new Intl.DateTimeFormat('ja', {
     dateStyle: 'medium',
