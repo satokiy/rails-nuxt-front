@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  ci:
+    docker:
+      - image: cimg/node:16.18
+        environment:
+          NODE_ENV: test
+    working_directory: ~/front
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-v1-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: yarn --frozen-lockfile --cache-folder ~/.cache/yarn
+
+      - save_cache:
+          key: yarn-v1-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Run linter
+          command: yarn lint
+
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - ci:
+          filters:
+            branches:
+              only:
+                - main
