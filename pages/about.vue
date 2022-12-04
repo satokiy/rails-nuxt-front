@@ -4,11 +4,5 @@
   </div>
 </template>
 <script setup>
-const enableCustomLayout = () => {
-  setPageLayout('custom')
 
-}
-definePageMeta({
-  layout: false,
-})
 </script>
