@@ -1,18 +1,11 @@
 <template>
-  <div>
+  <div class="tw-w-48">
     <NavNavbar />
     <h1>Main Page</h1>
+    <h1 class="text-3xl font-bold">
+      Hello world!
+   </h1>
   </div>
-  Count: {{ count }}
-  <div>
-    <button @click="inc">increase</button
-    ><button @click="dec">decrease</button>
-  </div>
-  <h2>{{ $hello("World") }}</h2>
-  <a target="_blank" href="https://icons8.com/icon/DcygmpZqBEd9/google-maps"
-    >Google Maps</a
-  >
-  icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 </template>
 <script setup>
 definePageMeta({
